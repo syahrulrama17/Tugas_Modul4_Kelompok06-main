@@ -100,3 +100,45 @@ export default function Counter() {
 
         <PredictionContext.Provider value={{ prediksi, changePrediction }}>
             <div className="predict">
+
+<p>Nama-Nama anggota kelompok 06</p>
+                
+                <PredictedCard />
+
+                
+
+            </div>
+        </PredictionContext.Provider>
+
+
+            <div className="ViewButton">
+                <div className="ViewButton2">
+                    <button className="Button" onClick={countUp}>
+                        Up
+                    </button>
+                </div>
+                <div className="ViewButton1">
+                    <button className="Button" onClick={countDown}>
+                        Down
+                    </button>
+                </div>
+            </div>
+
+            
+
+        </div>
+    );
+}
+
+
+
+function PredictedCard() {
+    const { prediksi, changePrediction } = useContext(PredictionContext);
+    return (
+        <div style={{border: `2px solid ${prediksi.color}`}}>
+            <h2 style={{textAlign:"center", color: prediksi.color}}>{prediksi.lambang}</h2>
+        </div>
+
+    )
+
+}
